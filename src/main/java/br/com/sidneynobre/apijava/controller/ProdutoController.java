@@ -20,7 +20,8 @@ public class ProdutoController {
         this.produtoRepository = produtoRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<Produto> findAllProdutoRs(){
         return produtoRepository.findAll();
     }
@@ -30,7 +31,7 @@ public class ProdutoController {
         return produtoRepository.getOne(id);
     }
 
-    @PostMapping("/")
+    @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
     public void saveProduto(@RequestBody ProdutoRq produtoRq){
         Produto produto = new Produto();

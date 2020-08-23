@@ -21,18 +21,19 @@ public class LojaController {
         this.lojaRepository = lojaRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<Loja> findAllLojaRs(){
         return lojaRepository.findAll();
     }
 
     @GetMapping("/{id}")
-    @ResponseStatus(value = HttpStatus.CREATED)
     public Loja findById(@PathVariable("id") Long id){
         return lojaRepository.getOne(id);
     }
 
-    @PostMapping("/")
+    @PostMapping
+    @ResponseStatus(value = HttpStatus.CREATED)
     public void saveLoja(@RequestBody LojaRq lojaRq){
         Loja loja = new Loja();
         loja.setNome(lojaRq.getNome());
