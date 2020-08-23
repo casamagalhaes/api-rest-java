@@ -15,7 +15,7 @@
 - Certifique-se que a porta 8080 está livre
 - Abra o terminal na pasta do projeto
     ```sh
-    $ cd /api-java
+    $ cd /api-rest-java
     ```
 - Execute o comando do Docker-Compose:
      ```sh
