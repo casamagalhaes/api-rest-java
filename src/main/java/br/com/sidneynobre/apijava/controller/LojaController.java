@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/loja")
+@CrossOrigin
 public class LojaController {
 
     private final LojaRepository lojaRepository;
